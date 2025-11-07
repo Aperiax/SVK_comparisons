@@ -1,0 +1,20 @@
+[package]
+name = "bfs"
+version = "0.1.0"
+edition = "2024"
+
+[dev-dependencies]
+criterion = "0.7.0"
+
+[[bench]]
+name = "bfs_bench"
+harness = false
+
+[[bench]]
+name = "graph_gen_bench"
+harness = false
+
+[dependencies]
+fastrand = "2.3.0"
+glob = "0.3.3"
+bitvec = "1.0.1"

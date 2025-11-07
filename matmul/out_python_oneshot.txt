@@ -1,0 +1,3 @@
+MATMUL NAIVE
+Tested sizes: 10, 100, 1000, 3000
+Averages sequential (timeit), 10 runs: [5.412570062617306e-05, 0.07242217540042475, 94.1768430438995]

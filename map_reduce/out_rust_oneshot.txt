@@ -1,0 +1,19 @@
+warning: function `simd_optim_sum` is never used
+  --> src/main.rs:30:4
+   |
+30 | fn simd_optim_sum(data: &[f64]) -> f64 {
+   |    ^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: `map_reduce` (bin "map_reduce") generated 1 warning
+    Finished `release` profile [optimized] target(s) in 0.02s
+     Running `target/release/map_reduce`
+1
+2
+3
+4
+MPRDC
+Measuring for 1e4, 1e5, 1e6 and 1e7 elements
+Averages sequential: [9.6778e-6, 4.710259999999999e-5, 0.000591863, 0.0067864116]
+Averages rayon: [8.398840000000001e-5, 4.61085e-5, 0.00020809510000000003, 0.0041215925]

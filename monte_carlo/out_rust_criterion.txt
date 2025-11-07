@@ -1,0 +1,70 @@
+warning: unused import: `consts::PI`
+ --> src/main.rs:3:17
+  |
+3 |     f32::{self, consts::PI},
+  |                 ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: `monte_carlo` (bin "monte_carlo") generated 1 warning (run `cargo fix --bin "monte_carlo"` to apply 1 suggestion)
+   Compiling monte_carlo v0.1.0 (/home/aperiax/School/SVK/monte_carlo)
+warning: unused import: `consts::PI`
+ --> benches/mc_test.rs:3:22
+  |
+3 | use std::f32::{self, consts::PI};
+  |                      ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: `monte_carlo` (bench "mc_test") generated 1 warning (run `cargo fix --bench "mc_test"` to apply 1 suggestion)
+warning: `monte_carlo` (bin "monte_carlo" test) generated 1 warning (1 duplicate)
+    Finished `bench` profile [optimized] target(s) in 0.10s
+     Running unittests src/main.rs (target/release/deps/monte_carlo-fda9874252fbe9b6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running benches/mc_test.rs (target/release/deps/mc_test-87f3c65692cb9516)
+Gnuplot not found, using plotters backend
+Benchmarking mc_maxiter_tests/1000000
+Benchmarking mc_maxiter_tests/1000000: Warming up for 3.0000 s
+Benchmarking mc_maxiter_tests/1000000: Collecting 100 samples in estimated 5.1015 s (1500 iterations)
+Benchmarking mc_maxiter_tests/1000000: Analyzing
+mc_maxiter_tests/1000000
+                        time:   [3.2656 ms 3.2862 ms 3.3068 ms]
+                        change: [+8.4137% +9.1552% +9.9289%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking mc_maxiter_tests/2000000
+Benchmarking mc_maxiter_tests/2000000: Warming up for 3.0000 s
+Benchmarking mc_maxiter_tests/2000000: Collecting 100 samples in estimated 5.4214 s (800 iterations)
+Benchmarking mc_maxiter_tests/2000000: Analyzing
+mc_maxiter_tests/2000000
+                        time:   [6.6451 ms 6.6901 ms 6.7350 ms]
+                        change: [+7.8637% +9.0361% +10.175%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high mild
+Benchmarking mc_maxiter_tests/3000000
+Benchmarking mc_maxiter_tests/3000000: Warming up for 3.0000 s
+Benchmarking mc_maxiter_tests/3000000: Collecting 100 samples in estimated 5.8953 s (600 iterations)
+Benchmarking mc_maxiter_tests/3000000: Analyzing
+mc_maxiter_tests/3000000
+                        time:   [10.059 ms 10.100 ms 10.145 ms]
+                        change: [+7.0108% +8.0087% +8.9682%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 3 outliers among 100 measurements (3.00%)
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+Benchmarking mc_maxiter_tests/10000000
+Benchmarking mc_maxiter_tests/10000000: Warming up for 3.0000 s
+Benchmarking mc_maxiter_tests/10000000: Collecting 100 samples in estimated 6.4015 s (200 iterations)
+Benchmarking mc_maxiter_tests/10000000: Analyzing
+mc_maxiter_tests/10000000
+                        time:   [32.968 ms 33.149 ms 33.328 ms]
+                        change: [+7.4494% +8.2148% +8.9753%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 2 outliers among 100 measurements (2.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high mild
+

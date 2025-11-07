@@ -1,0 +1,94 @@
+warning: function `simd_optim_sum` is never used
+  --> src/main.rs:30:4
+   |
+30 | fn simd_optim_sum(data: &[f64]) -> f64 {
+   |    ^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: `map_reduce` (bin "map_reduce") generated 1 warning
+warning: `map_reduce` (bin "map_reduce" test) generated 1 warning (1 duplicate)
+    Finished `bench` profile [optimized] target(s) in 0.02s
+     Running unittests src/main.rs (target/release/deps/map_reduce-3a09cfce910e2461)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running benches/map_reduce_bench.rs (target/release/deps/map_reduce_bench-4476820224fa4697)
+Gnuplot not found, using plotters backend
+Benchmarking sequential_reduce/10000
+Benchmarking sequential_reduce/10000: Warming up for 3.0000 s
+Benchmarking sequential_reduce/10000: Collecting 10 samples in estimated 5.0001 s (1.1M iterations)
+Benchmarking sequential_reduce/10000: Analyzing
+sequential_reduce/10000 time:   [4.3841 µs 4.3873 µs 4.3902 µs]
+                        change: [−4.9450% −4.2437% −3.5926%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 3 outliers among 10 measurements (30.00%)
+  1 (10.00%) low severe
+  1 (10.00%) low mild
+  1 (10.00%) high mild
+Benchmarking sequential_reduce/100000
+Benchmarking sequential_reduce/100000: Warming up for 3.0000 s
+Benchmarking sequential_reduce/100000: Collecting 10 samples in estimated 5.0007 s (111k iterations)
+Benchmarking sequential_reduce/100000: Analyzing
+sequential_reduce/100000
+                        time:   [44.927 µs 45.054 µs 45.149 µs]
+                        change: [−6.5730% −5.5553% −4.6139%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Benchmarking sequential_reduce/1000000
+Benchmarking sequential_reduce/1000000: Warming up for 3.0000 s
+Benchmarking sequential_reduce/1000000: Collecting 10 samples in estimated 5.0046 s (9900 iterations)
+Benchmarking sequential_reduce/1000000: Analyzing
+sequential_reduce/1000000
+                        time:   [492.76 µs 498.62 µs 504.76 µs]
+                        change: [−10.807% −9.2762% −7.8099%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking sequential_reduce/10000000
+Benchmarking sequential_reduce/10000000: Warming up for 3.0000 s
+Benchmarking sequential_reduce/10000000: Collecting 10 samples in estimated 5.0605 s (825 iterations)
+Benchmarking sequential_reduce/10000000: Analyzing
+sequential_reduce/10000000
+                        time:   [5.9782 ms 5.9932 ms 6.0119 ms]
+                        change: [−13.966% −12.884% −11.811%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+
+     Running benches/map_reduce_bench_rayon.rs (target/release/deps/map_reduce_bench_rayon-c22dc02f66208109)
+Gnuplot not found, using plotters backend
+Benchmarking rayon_reduce/10000
+Benchmarking rayon_reduce/10000: Warming up for 3.0000 s
+Benchmarking rayon_reduce/10000: Collecting 10 samples in estimated 5.0012 s (203k iterations)
+Benchmarking rayon_reduce/10000: Analyzing
+rayon_reduce/10000      time:   [24.169 µs 24.915 µs 27.015 µs]
+                        change: [−11.595% −6.3681% +2.1954%] (p = 0.11 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  2 (20.00%) high severe
+Benchmarking rayon_reduce/100000
+Benchmarking rayon_reduce/100000: Warming up for 3.0000 s
+Benchmarking rayon_reduce/100000: Collecting 10 samples in estimated 5.0020 s (125k iterations)
+Benchmarking rayon_reduce/100000: Analyzing
+rayon_reduce/100000     time:   [37.534 µs 37.936 µs 38.552 µs]
+                        change: [−16.141% −12.181% −6.2979%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking rayon_reduce/1000000
+Benchmarking rayon_reduce/1000000: Warming up for 3.0000 s
+Benchmarking rayon_reduce/1000000: Collecting 10 samples in estimated 5.0016 s (41k iterations)
+Benchmarking rayon_reduce/1000000: Analyzing
+rayon_reduce/1000000    time:   [112.45 µs 113.89 µs 116.53 µs]
+                        change: [−15.103% −12.432% −9.1891%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Benchmarking rayon_reduce/10000000
+Benchmarking rayon_reduce/10000000: Warming up for 3.0000 s
+Benchmarking rayon_reduce/10000000: Collecting 10 samples in estimated 5.0569 s (1155 iterations)
+Benchmarking rayon_reduce/10000000: Analyzing
+rayon_reduce/10000000   time:   [4.1534 ms 4.1857 ms 4.2641 ms]
+                        change: [−15.780% −13.515% −11.014%] (p = 0.00 < 0.05)
+                        Performance has improved.
+

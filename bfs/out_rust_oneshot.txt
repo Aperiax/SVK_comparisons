@@ -1,0 +1,51 @@
+warning: unused variable: `graphs`
+   --> src/graph.rs:150:17
+    |
+150 |         let mut graphs: Vec<Graph> = Vec::new();
+    |                 ^^^^^^ help: if this is intentional, prefix it with an underscore: `_graphs`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `sizes`
+   --> src/graph.rs:151:13
+    |
+151 |         let sizes = [100, 1000, 10000, 100000];
+    |             ^^^^^ help: if this is intentional, prefix it with an underscore: `_sizes`
+
+warning: variable does not need to be mutable
+   --> src/graph.rs:150:13
+    |
+150 |         let mut graphs: Vec<Graph> = Vec::new();
+    |             ----^^^^^^
+    |             |
+    |             help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: variable does not need to be mutable
+   --> src/graph.rs:155:13
+    |
+155 |         let mut reader = BufReader::new(file);
+    |             ----^^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: associated function `output_graph_for_bfs_testing` is never used
+   --> src/graph.rs:133:12
+    |
+ 18 | impl Graph {
+    | ---------- associated function in this implementation
+...
+133 |     pub fn output_graph_for_bfs_testing() -> std::io::Result<()> {
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: `bfs` (bin "bfs") generated 5 warnings (run `cargo fix --bin "bfs"` to apply 2 suggestions)
+    Finished `release` profile [optimized] target(s) in 0.07s
+     Running `target/release/bfs`
+BFS+GRAPHGEN
+Tested sizes: [100, 1000, 10000, 100000]
+Averages graphgen, 10 runs: [1.3938599999999999e-5, 0.00042263209999999997, 0.06745478199999999, 9.9505737934]
+Averages bfs, 10 runs: [2.3983e-6, 3.44662e-5, 0.0029110256, 0.10978847239999998]
+Done

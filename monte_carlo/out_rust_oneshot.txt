@@ -1,0 +1,14 @@
+   Compiling monte_carlo v0.1.0 (/home/aperiax/School/SVK/monte_carlo)
+warning: unused import: `consts::PI`
+ --> src/main.rs:3:17
+  |
+3 |     f32::{self, consts::PI},
+  |                 ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: `monte_carlo` (bin "monte_carlo") generated 1 warning (run `cargo fix --bin "monte_carlo"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.17s
+     Running `target/release/monte_carlo`
+MONTE-CARLO
+Average results for 1e6, 2e6, 3e6 and 1e7 iters: [0.0030265444999999997, 0.005972125100000001, 0.008821055299999998, 0.029890239899999997]

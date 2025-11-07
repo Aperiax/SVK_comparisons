@@ -1,0 +1,130 @@
+warning: unused variable: `graphs`
+   --> src/graph.rs:150:17
+    |
+150 |         let mut graphs: Vec<Graph> = Vec::new();
+    |                 ^^^^^^ help: if this is intentional, prefix it with an underscore: `_graphs`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `sizes`
+   --> src/graph.rs:151:13
+    |
+151 |         let sizes = [100, 1000, 10000, 100000];
+    |             ^^^^^ help: if this is intentional, prefix it with an underscore: `_sizes`
+
+warning: variable does not need to be mutable
+   --> src/graph.rs:150:13
+    |
+150 |         let mut graphs: Vec<Graph> = Vec::new();
+    |             ----^^^^^^
+    |             |
+    |             help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: variable does not need to be mutable
+   --> src/graph.rs:155:13
+    |
+155 |         let mut reader = BufReader::new(file);
+    |             ----^^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: associated function `output_graph_for_bfs_testing` is never used
+   --> src/graph.rs:133:12
+    |
+ 18 | impl Graph {
+    | ---------- associated function in this implementation
+...
+133 |     pub fn output_graph_for_bfs_testing() -> std::io::Result<()> {
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: `bfs` (bin "bfs") generated 5 warnings (run `cargo fix --bin "bfs"` to apply 2 suggestions)
+warning: `bfs` (bin "bfs" test) generated 5 warnings (5 duplicates)
+    Finished `bench` profile [optimized] target(s) in 0.07s
+     Running unittests src/main.rs (target/release/deps/bfs-857ae709b62bc378)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running benches/bfs_bench.rs (target/release/deps/bfs_bench-e49ca6c49731b06b)
+Gnuplot not found, using plotters backend
+Benchmarking BFS-bench-var-size/100
+Benchmarking BFS-bench-var-size/100: Warming up for 3.0000 s
+Benchmarking BFS-bench-var-size/100: Collecting 10 samples in estimated 5.0000 s (12M iterations)
+Benchmarking BFS-bench-var-size/100: Analyzing
+BFS-bench-var-size/100  time:   [425.74 ns 426.59 ns 427.34 ns]
+                        change: [−15.708% −14.313% −13.244%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Benchmarking BFS-bench-var-size/1000
+Benchmarking BFS-bench-var-size/1000: Warming up for 3.0000 s
+Benchmarking BFS-bench-var-size/1000: Collecting 10 samples in estimated 5.0003 s (517k iterations)
+Benchmarking BFS-bench-var-size/1000: Analyzing
+BFS-bench-var-size/1000 time:   [9.6535 µs 9.6787 µs 9.7055 µs]
+                        change: [−8.4133% −7.6705% −6.9595%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Benchmarking BFS-bench-var-size/10000
+Benchmarking BFS-bench-var-size/10000: Warming up for 3.0000 s
+Benchmarking BFS-bench-var-size/10000: Collecting 10 samples in estimated 5.0321 s (3960 iterations)
+Benchmarking BFS-bench-var-size/10000: Analyzing
+BFS-bench-var-size/10000
+                        time:   [1.2958 ms 1.3114 ms 1.3306 ms]
+                        change: [−32.289% −28.327% −24.475%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) low severe
+  1 (10.00%) low mild
+Benchmarking BFS-bench-var-size/100000
+Benchmarking BFS-bench-var-size/100000: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 5.0s. You may wish to increase target time to 5.8s or enable flat sampling.
+Benchmarking BFS-bench-var-size/100000: Collecting 10 samples in estimated 5.8342 s (55 iterations)
+Benchmarking BFS-bench-var-size/100000: Analyzing
+BFS-bench-var-size/100000
+                        time:   [92.409 ms 112.11 ms 129.46 ms]
+                        change: [−34.231% −8.1318% +23.552%] (p = 0.64 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) low mild
+  1 (10.00%) high mild
+
+     Running benches/graph_gen_bench.rs (target/release/deps/graph_gen_bench-c91de6702a0f1394)
+Gnuplot not found, using plotters backend
+Benchmarking Graphgen variable size/100
+Benchmarking Graphgen variable size/100: Warming up for 3.0000 s
+Benchmarking Graphgen variable size/100: Collecting 10 samples in estimated 5.0003 s (597k iterations)
+Benchmarking Graphgen variable size/100: Analyzing
+Graphgen variable size/100
+                        time:   [8.3156 µs 8.3720 µs 8.4723 µs]
+                        change: [−2.1656% −1.4385% −0.6544%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking Graphgen variable size/1000
+Benchmarking Graphgen variable size/1000: Warming up for 3.0000 s
+Benchmarking Graphgen variable size/1000: Collecting 10 samples in estimated 5.0142 s (13k iterations)
+Benchmarking Graphgen variable size/1000: Analyzing
+Graphgen variable size/1000
+                        time:   [385.27 µs 386.08 µs 386.65 µs]
+                        change: [−3.1809% −2.5139% −1.8935%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Benchmarking Graphgen variable size/10000
+Benchmarking Graphgen variable size/10000: Warming up for 3.0000 s
+Benchmarking Graphgen variable size/10000: Collecting 10 samples in estimated 5.8078 s (110 iterations)
+Benchmarking Graphgen variable size/10000: Analyzing
+Graphgen variable size/10000
+                        time:   [51.668 ms 53.327 ms 54.362 ms]
+                        change: [−4.4550% −1.7808% +0.8693%] (p = 0.23 > 0.05)
+                        No change in performance detected.
+Benchmarking Graphgen variable size/100000
+Benchmarking Graphgen variable size/100000: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 5.0s. You may wish to increase target time to 98.4s.
+Benchmarking Graphgen variable size/100000: Collecting 10 samples in estimated 98.419 s (10 iterations)
+Benchmarking Graphgen variable size/100000: Analyzing
+Graphgen variable size/100000
+                        time:   [9.8005 s 9.8385 s 9.8753 s]
+                        change: [−23.386% −21.622% −20.348%] (p = 0.00 < 0.05)
+                        Performance has improved.
+
