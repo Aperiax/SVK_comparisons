@@ -1,0 +1,95 @@
+warning: variable does not need to be mutable
+  --> src/main.rs:11:13
+   |
+11 |         let mut arr: Vec<usize> = (0..size).into_iter().map(|_| usize(0..size)).collect();
+   |             ----^^^
+   |             |
+   |             help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` on by default
+
+warning: unused variable: `r`
+  --> src/main.rs:72:9
+   |
+72 |     let r = f();
+   |         ^ help: if this is intentional, prefix it with an underscore: `_r`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `run`
+  --> src/main.rs:84:13
+   |
+84 |         for run in 0..num_runs {
+   |             ^^^ help: if this is intentional, prefix it with an underscore: `_run`
+
+warning: `quicksort` (bin "quicksort") generated 3 warnings (run `cargo fix --bin "quicksort"` to apply 1 suggestion)
+warning: unused import: `fastrand::usize`
+ --> benches/quicksort_bench.rs:2:5
+  |
+2 | use fastrand::usize;
+  |     ^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `array`
+ --> benches/quicksort_bench.rs:4:5
+  |
+4 |     array,
+  |     ^^^^^
+
+warning: `quicksort` (bin "quicksort" test) generated 3 warnings (3 duplicates)
+warning: `quicksort` (bench "quicksort_bench") generated 2 warnings (run `cargo fix --bench "quicksort_bench"` to apply 2 suggestions)
+    Finished `bench` profile [optimized] target(s) in 0.03s
+     Running unittests src/main.rs (target/release/deps/quicksort-5861783851a72004)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running benches/quicksort_bench.rs (target/release/deps/quicksort_bench-2aa6dee885614367)
+Gnuplot not found, using plotters backend
+Benchmarking QS-var-size/100000
+Benchmarking QS-var-size/100000: Warming up for 3.0000 s
+Benchmarking QS-var-size/100000: Collecting 10 samples in estimated 5.0359 s (2255 iterations)
+Benchmarking QS-var-size/100000: Analyzing
+QS-var-size/100000      time:   [1.9236 ms 1.9360 ms 1.9435 ms]
+                        change: [+0.9784% +1.7126% +2.3903%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking QS-var-size/1000000
+Benchmarking QS-var-size/1000000: Warming up for 3.0000 s
+Benchmarking QS-var-size/1000000: Collecting 10 samples in estimated 6.1434 s (220 iterations)
+Benchmarking QS-var-size/1000000: Analyzing
+QS-var-size/1000000     time:   [22.766 ms 22.991 ms 23.211 ms]
+                        change: [+2.2912% +2.8769% +3.5474%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking QS-var-size/10000000
+Benchmarking QS-var-size/10000000: Warming up for 3.0000 s
+Benchmarking QS-var-size/10000000: Collecting 10 samples in estimated 6.6441 s (20 iterations)
+Benchmarking QS-var-size/10000000: Analyzing
+QS-var-size/10000000    time:   [269.21 ms 273.42 ms 278.76 ms]
+                        change: [+2.1507% +3.8112% +5.8212%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+Benchmarking QS-var-size/50000000
+Benchmarking QS-var-size/50000000: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 5.0s. You may wish to increase target time to 21.3s.
+Benchmarking QS-var-size/50000000: Collecting 10 samples in estimated 21.271 s (10 iterations)
+Benchmarking QS-var-size/50000000: Analyzing
+QS-var-size/50000000    time:   [1.6196 s 1.6646 s 1.7175 s]
+                        change: [+7.2568% +10.356% +14.334%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking QS-var-size/100000000
+Benchmarking QS-var-size/100000000: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 5.0s. You may wish to increase target time to 41.9s.
+Benchmarking QS-var-size/100000000: Collecting 10 samples in estimated 41.915 s (10 iterations)
+Benchmarking QS-var-size/100000000: Analyzing
+QS-var-size/100000000   time:   [3.3428 s 3.3816 s 3.4260 s]
+                        change: [+3.3283% +4.6261% +6.0343%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+

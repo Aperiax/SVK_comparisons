@@ -1,0 +1,5 @@
+/target
+/__pycace__
+/.benchmarks
+/.pytest_cache
+

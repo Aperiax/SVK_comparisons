@@ -2,12 +2,14 @@ use rayon::prelude::*;
 use std::arch::x86_64::*;
 use std::time::{Duration, Instant};
 
-//don't even try
-fn sequential_map_reduce<'a, T>(arr: T) -> f64
+// lifetime specifier and generic type allows
+// us to use this for any collection allowing
+// iteration by reference (vecdeques, hahsmaps, vecs, arrs)
+fn sequential_map_reduce<'a, T>(col: T) -> f64
 where
     T: IntoIterator<Item = &'a f64>,
 {
-    arr.into_iter()
+    col.into_iter()
         .map(|x| x * x)
         // .inspect(|x| println!("{x}"))
         .sum()
